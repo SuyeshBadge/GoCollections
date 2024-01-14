@@ -29,6 +29,15 @@ func (s *OrderedSet) Remove(item interface{}) {
 	}
 }
 
+// Get returns the item at the specified index.
+// It returns the item at the specified index if the index is valid, otherwise it returns nil.
+func (s *OrderedSet) Get(index int) interface{} {
+	if index < 0 || index >= s.Len() {
+		return nil
+	}
+	return s.elements[index]
+}
+
 // Contains checks if the Set contains the specified item.
 // It returns true if the item is found in the Set, otherwise it returns false.
 func (s *OrderedSet) Contains(item interface{}) bool {
@@ -227,11 +236,6 @@ func (s *OrderedSet) IsEqual(other *OrderedSet) bool {
 	return s.Equal(other)
 }
 
-// IsOrdered checks if the current set is ordered.
-func (s *OrderedSet) IsOrdered() bool {
-	return true
-}
-
 // IsStrictSubset checks if the current set is a strict subset of the other set.
 func (s *OrderedSet) IsStrictSubset(other *OrderedSet) bool {
 	return s.IsProperSubset(other)
@@ -240,4 +244,11 @@ func (s *OrderedSet) IsStrictSubset(other *OrderedSet) bool {
 // IsStrictSuperset checks if the current set is a strict superset of the other set.
 func (s *OrderedSet) IsStrictSuperset(other *OrderedSet) bool {
 	return s.IsProperSuperset(other)
+}
+
+// Copy returns a new OrderedSet that is a copy of the original OrderedSet.
+// The elements in the new OrderedSet are the same as the elements in the original OrderedSet.
+// Changes made to the new OrderedSet will not affect the original OrderedSet.
+func (s *OrderedSet) Copy() *OrderedSet {
+	return s.Clone()
 }
