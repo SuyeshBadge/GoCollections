@@ -1,15 +1,13 @@
-package set_test
+package set
 
 import (
 	"testing"
-
-	set "goCollections/Set"
 )
 
 func TestOrderedSetCartesianProduct(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -45,8 +43,8 @@ func TestOrderedSetCartesianProduct(t *testing.T) {
 
 func TestOrderedSetDifference(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -75,8 +73,8 @@ func TestOrderedSetDifference(t *testing.T) {
 
 func TestOrderedSetIntersection(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -108,8 +106,8 @@ func TestOrderedSetIntersection(t *testing.T) {
 
 func TestOrderedSetIsSuperset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -131,8 +129,8 @@ func TestOrderedSetIsSuperset(t *testing.T) {
 
 func TestOrderedSetSymmetricDifference(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -164,8 +162,8 @@ func TestOrderedSetSymmetricDifference(t *testing.T) {
 
 func TestOrderedSetUnion(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -203,7 +201,7 @@ func TestOrderedSetUnion(t *testing.T) {
 
 func TestOrderedSetToSlice(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -233,7 +231,7 @@ func TestOrderedSetToSlice(t *testing.T) {
 
 func TestOrderedSetString(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -252,7 +250,7 @@ func TestOrderedSetString(t *testing.T) {
 
 func TestOrderedSetClear(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -271,7 +269,7 @@ func TestOrderedSetClear(t *testing.T) {
 
 func TestOrderedSetContains(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -292,7 +290,7 @@ func TestOrderedSetContains(t *testing.T) {
 
 func TestOrderedSetCopy(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -316,7 +314,7 @@ func TestOrderedSetCopy(t *testing.T) {
 
 func TestOrderedSetPowerSet(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -342,7 +340,7 @@ func TestOrderedSetPowerSet(t *testing.T) {
 
 func TestOrderedSetRemove(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add("a")
@@ -372,7 +370,7 @@ func TestOrderedSetRemove(t *testing.T) {
 
 func TestOrderedSetLen(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Test the length of the set
 	expectedLength := 0
@@ -383,7 +381,7 @@ func TestOrderedSetLen(t *testing.T) {
 
 func TestOrderedSetAdd(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add an element to the set
 	s.Add(1)
@@ -402,7 +400,7 @@ func TestOrderedSetAdd(t *testing.T) {
 
 func TestOrderedSetGet(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -430,8 +428,8 @@ func TestOrderedSetGet(t *testing.T) {
 }
 func TestOrderedSetEqual(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -459,8 +457,8 @@ func TestOrderedSetEqual(t *testing.T) {
 
 func TestOrderedSetIsSubset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -480,8 +478,8 @@ func TestOrderedSetIsSubset(t *testing.T) {
 	}
 
 	// Create two new instances of the OrderedSet struct
-	s3 := set.NewOrderedSet()
-	s4 := set.NewOrderedSet()
+	s3 := NewOrderedSet()
+	s4 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s3.Add(1)
@@ -500,8 +498,8 @@ func TestOrderedSetIsSubset(t *testing.T) {
 
 func TestOrderedSetIsDisjoint(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -528,8 +526,8 @@ func TestOrderedSetIsDisjoint(t *testing.T) {
 
 func TestOrderedSetIsProperSuperset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -555,8 +553,8 @@ func TestOrderedSetIsProperSuperset(t *testing.T) {
 
 func TestOrderedSetIsProperSubset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -586,8 +584,8 @@ func TestOrderedSetIsProperSubset(t *testing.T) {
 
 func TestOrderedSetDisjointUnion(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -618,7 +616,7 @@ func TestOrderedSetDisjointUnion(t *testing.T) {
 
 func TestOrderedSetIsEmpty(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Test if the set is empty
 	if !s.IsEmpty() {
@@ -635,7 +633,7 @@ func TestOrderedSetIsEmpty(t *testing.T) {
 }
 func TestOrderedSetPop(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -654,7 +652,7 @@ func TestOrderedSetPop(t *testing.T) {
 
 func TestOrderedSetPopEmptySet(t *testing.T) {
 	// Create a new instance of the OrderedSet struct
-	s := set.NewOrderedSet()
+	s := NewOrderedSet()
 
 	// Test the Pop method on an empty set
 	poppedItem := s.Pop()
@@ -672,8 +670,8 @@ func TestOrderedSetPopEmptySet(t *testing.T) {
 }
 func TestOrderedSetIsEqual(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -693,8 +691,8 @@ func TestOrderedSetIsEqual(t *testing.T) {
 
 func TestOrderedSetIsEqualDifferentOrder(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -714,8 +712,8 @@ func TestOrderedSetIsEqualDifferentOrder(t *testing.T) {
 
 func TestOrderedSetIsEqualDifferentElements(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -734,8 +732,8 @@ func TestOrderedSetIsEqualDifferentElements(t *testing.T) {
 }
 func TestOrderedSetIsStrictSubset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -756,8 +754,8 @@ func TestOrderedSetIsStrictSubset(t *testing.T) {
 
 func TestOrderedSetIsStrictSubset_NotStrictSubset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -776,8 +774,8 @@ func TestOrderedSetIsStrictSubset_NotStrictSubset(t *testing.T) {
 }
 func TestOrderedSetIsStrictSuperset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -797,8 +795,8 @@ func TestOrderedSetIsStrictSuperset(t *testing.T) {
 
 func TestOrderedSetIsStrictSuperset_EmptySet(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	s1.Add(1)
 	s1.Add(2)
@@ -815,8 +813,8 @@ func TestOrderedSetIsStrictSuperset_EmptySet(t *testing.T) {
 
 func TestOrderedSetIsStrictSuperset_NotSuperset(t *testing.T) {
 	// Create two new instances of the OrderedSet struct
-	s1 := set.NewOrderedSet()
-	s2 := set.NewOrderedSet()
+	s1 := NewOrderedSet()
+	s2 := NewOrderedSet()
 
 	// Add some elements to the first set
 	s1.Add(1)

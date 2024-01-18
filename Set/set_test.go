@@ -1,14 +1,12 @@
-package set_test
+package set
 
 import (
 	"testing"
-
-	set "goCollections/Set"
 )
 
 func TestPowerSet(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -17,7 +15,7 @@ func TestPowerSet(t *testing.T) {
 
 	// Get the power set
 	powerSet := s.PowerSet()
-	powerSet2 := set.PowerSet(s)
+	powerSet2 := PowerSet(s)
 
 	// Test the length of the power set
 	expectedLength := 1 << s.Len() // 2^n
@@ -52,7 +50,7 @@ func TestPowerSet(t *testing.T) {
 
 func TestIsProperSuperset(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -60,7 +58,7 @@ func TestIsProperSuperset(t *testing.T) {
 	s.Add(3)
 
 	// Create another set
-	s2 := set.NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the second set
 	s2.Add(1)
@@ -69,7 +67,7 @@ func TestIsProperSuperset(t *testing.T) {
 	// Test if s is a proper superset of s2
 	expectedResult := true
 	result := s.IsProperSuperset(s2)
-	result2 := set.IsProperSuperset(s, s2)
+	result2 := IsProperSuperset(s, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsProperSuperset to return %v, got %v", expectedResult, result)
 	}
@@ -78,7 +76,7 @@ func TestIsProperSuperset(t *testing.T) {
 	}
 
 	// Create another set
-	s3 := set.NewSet()
+	s3 := NewSet()
 
 	// Add some elements to the third set
 	s3.Add(1)
@@ -88,7 +86,7 @@ func TestIsProperSuperset(t *testing.T) {
 	// Test if s3 is a proper superset of s
 	expectedResult = false
 	result = s3.IsProperSuperset(s)
-	result2 = set.IsProperSuperset(s3, s)
+	result2 = IsProperSuperset(s3, s)
 	if result != expectedResult {
 		t.Errorf("Expected IsProperSuperset to return %v, got %v", expectedResult, result)
 	}
@@ -98,8 +96,8 @@ func TestIsProperSuperset(t *testing.T) {
 }
 func TestIsProperSubset(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -115,7 +113,7 @@ func TestIsProperSubset(t *testing.T) {
 	// Test if s1 is a proper subset of s2
 	expectedResult := true
 	result := s1.IsProperSubset(s2)
-	result2 := set.IsProperSubset(s1, s2)
+	result2 := IsProperSubset(s1, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsProperSubset to return %v, got %v", expectedResult, result)
 	}
@@ -126,7 +124,7 @@ func TestIsProperSubset(t *testing.T) {
 	// Test if s2 is a proper subset of s1
 	expectedResult = false
 	result = s2.IsProperSubset(s1)
-	result2 = set.IsProperSubset(s2, s1)
+	result2 = IsProperSubset(s2, s1)
 	if result != expectedResult {
 		t.Errorf("Expected IsProperSubset to return %v, got %v", expectedResult, result)
 	}
@@ -143,7 +141,7 @@ func TestIsProperSubset(t *testing.T) {
 }
 func TestClone(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -171,8 +169,8 @@ func TestClone(t *testing.T) {
 }
 func TestIsDisjoint(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -187,7 +185,7 @@ func TestIsDisjoint(t *testing.T) {
 	// Test if s1 and s2 are disjoint
 	expectedResult := true
 	result := s1.IsDisjoint(s2)
-	result2 := set.IsDisjoint(s1, s2)
+	result2 := IsDisjoint(s1, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsDisjoint to return %v, got %v", expectedResult, result)
 	}
@@ -201,7 +199,7 @@ func TestIsDisjoint(t *testing.T) {
 	// Test if s1 and s2 are disjoint
 	expectedResult = false
 	result = s1.IsDisjoint(s2)
-	result2 = set.IsDisjoint(s1, s2)
+	result2 = IsDisjoint(s1, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsDisjoint to return %v, got %v", expectedResult, result)
 	}
@@ -211,7 +209,7 @@ func TestIsDisjoint(t *testing.T) {
 }
 func TestIsSuperset(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -219,7 +217,7 @@ func TestIsSuperset(t *testing.T) {
 	s.Add(3)
 
 	// Create another set
-	s2 := set.NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the second set
 	s2.Add(1)
@@ -228,7 +226,7 @@ func TestIsSuperset(t *testing.T) {
 	// Test if s is a superset of s2
 	expectedResult := true
 	result := s.IsSuperset(s2)
-	result2 := set.IsSuperset(s, s2)
+	result2 := IsSuperset(s, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsSuperset to return %v, got %v", expectedResult, result)
 	}
@@ -238,7 +236,7 @@ func TestIsSuperset(t *testing.T) {
 	}
 
 	// Create another set
-	s3 := set.NewSet()
+	s3 := NewSet()
 
 	// Add some elements to the third set
 	s3.Add(1)
@@ -254,7 +252,7 @@ func TestIsSuperset(t *testing.T) {
 
 func TestIsSubset(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -262,7 +260,7 @@ func TestIsSubset(t *testing.T) {
 	s.Add(3)
 
 	// Create another set
-	s2 := set.NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the second set
 	s2.Add(1)
@@ -272,7 +270,7 @@ func TestIsSubset(t *testing.T) {
 	// Test if s2 is a subset of s
 	expectedResult := true
 	result := s.IsSubset(s2)
-	result2 := set.IsSubset(s, s2)
+	result2 := IsSubset(s, s2)
 	if result != expectedResult {
 		t.Errorf("Expected IsSubset to return %v, got %v", expectedResult, result)
 	}
@@ -281,7 +279,7 @@ func TestIsSubset(t *testing.T) {
 	}
 
 	// Create another set
-	s3 := set.NewSet()
+	s3 := NewSet()
 
 	// Add some elements to the third set
 	s3.Add(1)
@@ -290,7 +288,7 @@ func TestIsSubset(t *testing.T) {
 	// Test if s3 is a subset of s
 	expectedResult = false
 	result = s.IsSubset(s3)
-	result2 = set.IsSubset(s, s3)
+	result2 = IsSubset(s, s3)
 	if result != expectedResult {
 		t.Errorf("Expected IsSubset to return %v, got %v", expectedResult, result)
 	}
@@ -301,8 +299,8 @@ func TestIsSubset(t *testing.T) {
 
 func TestSymmetricDifference(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -328,8 +326,8 @@ func TestSymmetricDifference(t *testing.T) {
 
 func TestDifference(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -355,8 +353,8 @@ func TestDifference(t *testing.T) {
 
 func TestIntersection(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -382,8 +380,8 @@ func TestIntersection(t *testing.T) {
 
 func TestUnion(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -409,7 +407,7 @@ func TestUnion(t *testing.T) {
 
 func TestRemove(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -430,7 +428,7 @@ func TestRemove(t *testing.T) {
 
 func TestContains(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -448,7 +446,7 @@ func TestContains(t *testing.T) {
 
 func TestLen(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -464,7 +462,7 @@ func TestLen(t *testing.T) {
 
 func TestClear(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -482,8 +480,8 @@ func TestClear(t *testing.T) {
 
 func TestEqual(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -499,12 +497,12 @@ func TestEqual(t *testing.T) {
 	if !s1.Equal(s2) {
 		t.Errorf("Expected sets to be equal")
 	}
-	if !set.Equal(s1, s2) {
+	if !Equal(s1, s2) {
 		t.Errorf("Expected sets to be equal")
 	}
 
 	// Create another set
-	s3 := set.NewSet()
+	s3 := NewSet()
 
 	// Add some elements to the third set
 	s3.Add(1)
@@ -514,7 +512,7 @@ func TestEqual(t *testing.T) {
 	if s1.Equal(s3) {
 		t.Errorf("Expected sets to not be equal")
 	}
-	if set.Equal(s1, s3) {
+	if Equal(s1, s3) {
 		t.Errorf("Expected sets to not be equal")
 	}
 
@@ -523,7 +521,7 @@ func TestEqual(t *testing.T) {
 func TestIsEmpty(t *testing.T) {
 
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Test if the set is empty
 	if !s.IsEmpty() {
@@ -543,7 +541,7 @@ func TestIsEmpty(t *testing.T) {
 
 func TestString(t *testing.T) {
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add("Hello")
@@ -558,7 +556,7 @@ func TestString(t *testing.T) {
 func TestToSlice(t *testing.T) {
 
 	// Create a new instance of the Set struct
-	s := set.NewSet()
+	s := NewSet()
 
 	// Add some elements to the set
 	s.Add(1)
@@ -576,7 +574,7 @@ func TestToSlice(t *testing.T) {
 
 func TestNewSetFromSlice(t *testing.T) {
 	// Create a new set from a slice
-	s := set.NewSetFromSlice([]interface{}{1, 2, 3})
+	s := NewSetFromSlice([]interface{}{1, 2, 3})
 
 	// Test if the set contains the correct elements
 	expectedElements := []interface{}{1, 2, 3}
@@ -589,7 +587,7 @@ func TestNewSetFromSlice(t *testing.T) {
 
 func TestNewSet(t *testing.T) {
 	// Create a new set
-	s := set.NewSet()
+	s := NewSet()
 
 	// Test if the set is empty
 	if !s.IsEmpty() {
@@ -599,8 +597,8 @@ func TestNewSet(t *testing.T) {
 
 func TestCartesianProduct(t *testing.T) {
 	// Create two new instances of the Set struct
-	s1 := set.NewSet()
-	s2 := set.NewSet()
+	s1 := NewSet()
+	s2 := NewSet()
 
 	// Add some elements to the first set
 	s1.Add(1)
@@ -613,7 +611,7 @@ func TestCartesianProduct(t *testing.T) {
 
 	// Calculate the cartesian product of s1 and s2
 	cartesianProduct := s1.CartesianProduct(s2)
-	cartesianProduct2 := set.CartesianProduct(s1, s2)
+	cartesianProduct2 := CartesianProduct(s1, s2)
 
 	// Test the length of the cartesian product
 	expectedLength := s1.Len() * s2.Len()

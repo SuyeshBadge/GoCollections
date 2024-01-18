@@ -1,13 +1,12 @@
-package array_test
+package array
 
 import (
-	array "goCollections/Array"
 	"testing"
 )
 
 func TestInsertAt(t *testing.T) {
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test inserting at index 0
 	err := arr.InsertAt(0, 10)
@@ -48,7 +47,7 @@ func TestInsertAt(t *testing.T) {
 
 func TestRemoveAt(t *testing.T) {
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -94,7 +93,7 @@ func TestRemoveAt(t *testing.T) {
 
 func TestGet(t *testing.T) {
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test getting value at index 0
 	arr.InsertAt(0, 10)
@@ -126,7 +125,7 @@ func TestGet(t *testing.T) {
 
 func TestSet(t *testing.T) {
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test setting value at index 0
 	arr.InsertAt(0, 10)
@@ -162,7 +161,7 @@ func TestSet(t *testing.T) {
 func TestClear(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -179,7 +178,7 @@ func TestClear(t *testing.T) {
 func TestResize(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -208,7 +207,7 @@ func TestResize(t *testing.T) {
 func TestIndexOf(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -229,7 +228,7 @@ func TestIndexOf(t *testing.T) {
 func TestContains(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -250,7 +249,7 @@ func TestContains(t *testing.T) {
 func TestIsEmpty(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test IsEmpty on an empty array
 	if !arr.IsEmpty() {
@@ -267,7 +266,7 @@ func TestIsEmpty(t *testing.T) {
 func TestLen(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test Len on an empty array
 	if arr.Len() != 0 {
@@ -284,7 +283,7 @@ func TestLen(t *testing.T) {
 func TestToArray(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -309,7 +308,7 @@ func TestToArray(t *testing.T) {
 func TestValues(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Insert some values
 	arr.InsertAt(0, 10)
@@ -334,7 +333,7 @@ func TestValues(t *testing.T) {
 func TestNewDynamicArray(t *testing.T) {
 
 	// Create a new instance of the Array struct
-	arr := array.NewDynamicArray()
+	arr := NewDynamicArray()
 
 	// Test NewDynamicArray
 	if len(arr.ToArray()) != 0 {
